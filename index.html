@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barão Automotiva - Especialista Renault</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .menu-button-line {
+            transition: all 0.3s ease-in-out;
+        }
+        .menu-button.open .menu-button-line:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .menu-button.open .menu-button-line:nth-child(2) {
+            opacity: 0;
+        }
+        .menu-button.open .menu-button-line:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="scroll-smooth">
+    <!-- Header/Navbar -->
+    <nav class="bg-gradient-to-r from-yellow-400 to-yellow-500 shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-black text-yellow-400 p-2 rounded-lg font-bold text-xl">
+                        BA
+                    </div>
+                    <div>
+                        <h1 class="text-black font-bold text-xl">Barão Automotiva</h1>
+                        <p class="text-black text-xs">Especialista Renault há 20 anos</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-black hover:text-white transition-colors duration-300 font-semibold">Home</a>
+                    <a href="#servicos" class="text-black hover:text-white transition-colors duration-300 font-semibold">Serviços</a>
+                    <a href="#sobre" class="text-black hover:text-white transition-colors duration-300 font-semibold">Sobre</a>
+                    <a href="#modelos" class="text-black hover:text-white transition-colors duration-300 font-semibold">Modelos</a>
+                    <a href="#depoimentos" class="text-black hover:text-white transition-colors duration-300 font-semibold">Depoimentos</a>
+                    <a href="#contato" class="text-black hover:text-white transition-colors duration-300 font-semibold">Contato</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-button" class="md:hidden text-black focus:outline-none">
+                    <div class="space-y-1">
+                        <span class="block w-6 h-0.5 bg-black menu-button-line"></span>
+                        <span class="block w-6 h-0.5 bg-black menu-button-line"></span>
+                        <span class="block w-6 h-0.5 bg-black menu-button-line"></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-yellow-400 border-t border-yellow-600 hidden">
+            <a href="#home" class="block w-full text-left px-4 py-3 text-black hover:bg-yellow-500 capitalize font-semibold">Home</a>
+            <a href="#servicos" class="block w-full text-left px-4 py-3 text-black hover:bg-yellow-500 capitalize font-semibold">Serviços</a>
+            <a href="#sobre" class="block w-full text-left px-4 py-3 text-black hover:bg-yellow-500 capitalize font-semibold">Sobre</a>
+            <a href="#modelos" class="block w-full text-left px-4 py-3 text-black hover:bg-yellow-500 capitalize font-semibold">Modelos</a>
+            <a href="#depoimentos" class="block w-full text-left px-4 py-3 text-black hover:bg-yellow-500 capitalize font-semibold">Depoimentos</a>
+            <a href="#contato" class="block w-full text-left px-4 py-3 text-black hover:bg-yellow-500 capitalize font-semibold">Contato</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-16 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 py-20 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-5xl md:text-6xl font-bold mb-6 animate-pulse">
+                    Barão Automotiva: Seu <span class="text-yellow-400">Renault</span> em Boas Mãos
+                </h2>
+                <p class="text-xl md:text-2xl mb-8 text-gray-300">
+                    Mais de 20 anos de experiência dedicados à marca Renault
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#contato"
+                      class="bg-yellow-400 text-black px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-500 transform hover:scale-105 transition-all duration-300 shadow-lg"
+                    >
+                      Agende seu Serviço
+                    </a>
+                    <a href="#servicos"
+                      class="bg-transparent border-2 border-yellow-400 text-yellow-400 px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-400 hover:text-black transform hover:scale-105 transition-all duration-300"
+                    >
+                      Nossos Serviços
+                    </a>
+                </div>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-xl">
+                        <div class="text-4xl mb-3">🏆</div>
+                        <h3 class="text-2xl font-bold text-yellow-400 mb-2">20+ Anos</h3>
+                        <p class="text-gray-300">De experiência exclusiva Renault</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-xl">
+                        <div class="text-4xl mb-3">👤</div>
+                        <h3 class="text-2xl font-bold text-yellow-400 mb-2">1 Especialista</h3>
+                        <p class="text-gray-300">Atendimento direto e personalizado</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-xl">
+                        <div class="text-4xl mb-3">⭐</div>
+                        <h3 class="text-2xl font-bold text-yellow-400 mb-2">100%</h3>
+                        <p class="text-gray-300">Garantia nos serviços</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="pt-24 pb-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-4 text-gray-900">Nossos Serviços</h2>
+            <p class="text-center text-gray-600 mb-12 text-lg">Soluções completas para seu Renault, com a expertise de quem entende</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border-t-4 border-yellow-400">
+                    <div class="text-5xl mb-4">🔧</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Manutenção Preventiva</h3>
+                    <p class="text-gray-600">Revisões completas seguindo os padrões de fábrica da Renault, garantindo a longevidade do seu veículo.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border-t-4 border-yellow-400">
+                    <div class="text-5xl mb-4">⚙️</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Diagnóstico Eletrônico</h3>
+                    <p class="text-gray-600">Utilizamos equipamentos de última geração para um diagnóstico preciso de falhas eletrônicas.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border-t-4 border-yellow-400">
+                    <div class="text-5xl mb-4">🛠️</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Reparos Mecânicos</h3>
+                    <p class="text-gray-600">Reparos especializados em motor, câmbio, suspensão, freios e outros sistemas do seu Renault.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border-t-4 border-yellow-400">
+                    <div class="text-5xl mb-4">🔩</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Peças de Qualidade</h3>
+                    <p class="text-gray-600">Trabalhamos com peças de alta qualidade, garantindo a performance e segurança do seu veículo.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border-t-4 border-yellow-400">
+                    <div class="text-5xl mb-4">💨</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Ar Condicionado</h3>
+                    <p class="text-gray-600">Manutenção, recarga e reparos no sistema de ar condicionado para seu conforto.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border-t-4 border-yellow-400">
+                    <div class="text-5xl mb-4">⚡</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Sistema Elétrico</h3>
+                    <p class="text-gray-600">Diagnóstico e reparo completo de todo o sistema elétrico e eletrônico do seu Renault.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="pt-24 pb-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6 text-gray-900">Sobre a Barão Automotiva</h2>
+                    <p class="text-gray-700 text-lg mb-4 leading-relaxed">
+                        Com mais de <strong>20 anos de experiência</strong> no mercado automotivo, a Barão Automotiva é liderada por um único especialista, dedicado exclusivamente a veículos Renault. Aqui, você tem atendimento direto com quem realmente entende do seu carro.
+                    </p>
+                    <p class="text-gray-700 text-lg mb-4 leading-relaxed">
+                        Nosso compromisso é com a excelência, utilizando equipamentos de última geração e peças de alta qualidade para garantir a performance, segurança e longevidade do seu Renault.
+                    </p>
+                    <div class="mt-8 space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-yellow-400 p-2 rounded-full">✓</div>
+                            <span class="text-gray-800 font-semibold">Especialista certificado Renault</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-yellow-400 p-2 rounded-full">✓</div>
+                            <span class="text-gray-800 font-semibold">Equipamentos de diagnóstico modernos</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-yellow-400 p-2 rounded-full">✓</div>
+                            <span class="text-gray-800 font-semibold">Atendimento personalizado e transparente</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-yellow-400 to-yellow-500 p-8 rounded-2xl shadow-2xl">
+                    <div class="bg-white p-8 rounded-xl">
+                        <h3 class="text-2xl font-bold mb-6 text-gray-900">Nossa Trajetória</h3>
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex items-center space-x-3">
+                                <span class="text-yellow-500 font-bold text-xl">2004</span>
+                                <span>Início da jornada no universo automotivo.</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <span class="text-yellow-500 font-bold text-xl">2010</span>
+                                <span>Especialização e foco total na marca Renault.</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <span class="text-yellow-500 font-bold text-xl">Hoje</span>
+                                <span>Referência em manutenção Renault, com mais de duas décadas de experiência.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modelos Atendidos Section -->
+    <section id="modelos" class="pt-24 pb-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-4 text-gray-900">Modelos Renault que Atendemos</h2>
+            <p class="text-center text-gray-600 mb-12 text-lg">Expertise em toda a linha Renault Brasil, do clássico ao mais recente.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Exemplo de Card de Modelo - Substitua as imagens e textos -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+                    <img src="https://placehold.co/400x250/FFD700/000000?text=Renault+Kwid" alt="Renault Kwid" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-bold text-gray-900">Renault Kwid</h4>
+                        <p class="text-sm text-gray-600">Manutenção completa para seu compacto.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+                    <img src="https://placehold.co/400x250/FFD700/000000?text=Renault+Stepway" alt="Renault Stepway" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-bold text-gray-900">Renault Stepway</h4>
+                        <p class="text-sm text-gray-600">Serviços especializados para o aventureiro.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+                    <img src="https://placehold.co/400x250/FFD700/000000?text=Renault+Duster" alt="Renault Duster" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-bold text-gray-900">Renault Duster</h4>
+                        <p class="text-sm text-gray-600">Expertise no SUV robusto da Renault.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+                    <img src="https://placehold.co/400x250/FFD700/000000?text=Renault+Logan" alt="Renault Logan" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-bold text-gray-900">Renault Logan</h4>
+                        <p class="text-sm text-gray-600">Cuidado e precisão para seu sedan.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+                    <img src="https://placehold.co/400x250/FFD700/000000?text=Renault+Captur" alt="Renault Captur" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-bold text-gray-900">Renault Captur</h4>
+                        <p class="text-sm text-gray-600">Manutenção detalhada para o SUV elegante.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+                    <img src="https://placehold.co/400x250/FFD700/000000?text=Renault+Oroch" alt="Renault Oroch" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-bold text-gray-900">Renault Oroch</h4>
+                        <p class="text-sm text-gray-600">Serviços para a picape versátil da Renault.</p>
+                    </div>
+                </div>
+                <!-- Adicione mais cards conforme necessário -->
+            </div>
+            <p class="text-center text-gray-700 mt-12 text-lg">Atendemos toda a linha Renault, incluindo modelos mais antigos. Consulte-nos!</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="depoimentos" class="pt-24 pb-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-4 text-gray-900">Depoimentos</h2>
+            <p class="text-center text-gray-600 mb-12 text-lg">O que nossos clientes satisfeitos dizem sobre o Barão</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <div class="flex mb-4">
+                        <span class="text-yellow-400 text-2xl">★</span>
+                        <span class="text-yellow-400 text-2xl">★</span>
+                        <span class="text-yellow-400 text-2xl">★</span>
+                        <span class="text-yellow-400 text-2xl">★</span>
+                        <span class="text-yellow-400 text-2xl">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"O Barão é o melhor! Meu Sandero ficou perfeito, atendimento super atencioso e transparente. Recomendo de olhos fechados!"</p>
+                    <p class="font-bold text-gray-900">- Carlos Silva</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <div class="flex mb-4">
+                        <span class="text-yellow-400 text-2xl">★</span>
+                        <span class="text-yellow-400 text-2xl">★</span>
+                        <span class="text-yellow-400 text-2xl">★</span>
+                        <span class="text-yellow-400 text-2xl">★</span>
+                        <span class="text-yellow-400 text-2xl">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"Profissionalismo e honestidade. É difícil encontrar um mecânico de confiança, mas o Barão superou minhas expectativas. Meu Logan está novo!"</p>
+                    <p class="font-bold text-gray-900">- Maria Santos</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <div class="flex mb-4">
+                        <span class="text-yellow-400 text-2xl">★</span>
+                        <span class="text-yellow-400 text-2xl">★</span>
+                        <span class="text-yellow-400 text-2xl">★</span>
+                        <span class="text-yellow-400 text-2xl">★</span>
+                        <span class="text-yellow-400 text-2xl">★</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"20 anos de experiência fazem toda a diferença. O serviço no meu Duster foi impecável, e o Barão explicou tudo com muita clareza."</p>
+                    <p class="font-bold text-gray-900">- João Oliveira</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="pt-24 pb-16 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-4">Entre em Contato</h2>
+            <p class="text-center text-gray-300 mb-12 text-lg">Agende seu serviço ou tire suas dúvidas diretamente com o Barão</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <form action="https://formspree.io/f/seuemail@exemplo.com" method="POST" class="space-y-6">
+                        <!-- ATENÇÃO: Substitua "seuemail@exemplo.com" no action do formulário acima pelo seu e-mail real no Formspree -->
+                        <div>
+                            <label for="nome" class="block mb-2 font-semibold">Nome</label>
+                            <input
+                                type="text"
+                                id="nome"
+                                name="nome"
+                                required
+                                class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-yellow-400 focus:outline-none text-white"
+                                placeholder="Seu nome completo"
+                            />
+                        </div>
+                        <div>
+                            <label for="telefone" class="block mb-2 font-semibold">Telefone</label>
+                            <input
+                                type="tel"
+                                id="telefone"
+                                name="telefone"
+                                required
+                                class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-yellow-400 focus:outline-none text-white"
+                                placeholder="(00) 00000-0000"
+                            />
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2 font-semibold">Email</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                                class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-yellow-400 focus:outline-none text-white"
+                                placeholder="seu@email.com"
+                            />
+                        </div>
+                        <div>
+                            <label for="servico" class="block mb-2 font-semibold">Serviço de Interesse</label>
+                            <select
+                                id="servico"
+                                name="servico"
+                                required
+                                class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-yellow-400 focus:outline-none text-white"
+                            >
+                                <option value="">Selecione um serviço</option>
+                                <option value="manutencao">Manutenção Preventiva</option>
+                                <option value="diagnostico">Diagnóstico Eletrônico</option>
+                                <option value="reparo">Reparo Mecânico</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="mensagem" class="block mb-2 font-semibold">Mensagem</label>
+                            <textarea
+                                id="mensagem"
+                                name="mensagem"
+                                rows="4"
+                                class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-yellow-400 focus:outline-none text-white"
+                                placeholder="Descreva o serviço que precisa ou sua dúvida..."
+                            ></textarea>
+                        </div>
+                        <button
+                            type="submit"
+                            class="w-full bg-yellow-400 text-black px-6 py-4 rounded-lg font-bold text-lg hover:bg-yellow-500 transform hover:scale-105 transition-all duration-300 shadow-lg"
+                        >
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                    <p class="text-sm text-gray-400 mt-4 text-center">
+                        Para que o formulário funcione, você precisará configurá-lo com o <a href="https://formspree.io/" target="_blank" class="text-yellow-400 hover:underline">Formspree.io</a> (gratuito).
+                    </p>
+                </div>
+                <div class="space-y-8">
+                    <div class="bg-gray-800 p-6 rounded-xl">
+                        <h3 class="text-2xl font-bold mb-6 text-yellow-400">Informações de Contato</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-4">
+                                <div class="text-2xl">📍</div>
+                                <div>
+                                    <p class="font-semibold">Endereço</p>
+                                    <p class="text-gray-300">Rua das Oficinas, 123 - Centro, Sua Cidade - SP</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="text-2xl">📞</div>
+                                <div>
+                                    <p class="font-semibold">Telefone</p>
+                                    <p class="text-gray-300">(11) 98765-4321</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="text-2xl">✉️</div>
+                                <div>
+                                    <p class="font-semibold">Email</p>
+                                    <p class="text-gray-300">contato@baraoautomotiva.com.br</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="text-2xl">🕐</div>
+                                <div>
+                                    <p class="font-semibold">Horário de Funcionamento</p>
+                                    <p class="text-gray-300">Seg - Sex: 8h às 18h</p>
+                                    <p class="text-gray-300">Sábado: 8h às 12h</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-yellow-400 p-6 rounded-xl text-black">
+                        <h3 class="text-xl font-bold mb-3">🎉 Promoção!</h3>
+                        <p class="font-semibold">Primeira revisão com 15% de desconto para novos clientes! Fale com o Barão!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">© 2024 Barão Automotiva - Todos os direitos reservados</p>
+            <p class="text-gray-500 mt-2">20 anos de tradição e qualidade em Renault</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuButton.classList.toggle('open');
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu after clicking a link
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    menuButton.classList.remove('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
