@@ -24,21 +24,86 @@
         .scroll-smooth {
             scroll-behavior: smooth;
         }
+        
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+        }
+        
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .carousel-slide.active {
+            opacity: 1;
+        }
+        
+        .carousel-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .carousel-text {
+            text-align: center;
+            color: white;
+            z-index: 10;
+        }
+        
+        .carousel-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 20;
+        }
+        
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .indicator.active {
+            background: #FFC800;
+            width: 30px;
+            border-radius: 6px;
+        }
     </style>
 </head>
 <body class="scroll-smooth">
     <!-- Header/Navbar -->
     <nav class="bg-gradient-to-r from-yellow-400 to-yellow-500 shadow-lg fixed w-full top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center space-x-3">
-                    <div class="bg-black text-yellow-400 p-2 rounded-lg font-bold text-xl">
-                        BA
-                    </div>
-                    <div>
-                        <h1 class="text-black font-bold text-xl">Barão Automotiva</h1>
-                        <p class="text-black text-xs">Especialista Renault há 20 anos</p>
-                    </div>
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <img src="grok-image-altere o carro, use somente seus traços de contorno na cor branca-altere o carro, use o mesmo estilo, porem use o kardian como base-todas as letras estilo emblema de carro em auto relevo-deixar todas as .png" 
+                         alt="Barão Automotiva - Especialista Renault" 
+                         class="h-12 md:h-16 object-contain"
+                         style="filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));">
                 </div>
                 
                 <!-- Desktop Menu -->
@@ -73,11 +138,85 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="pt-16 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+    <!-- Hero Section with Carousel -->
+    <section id="home" class="pt-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+        <!-- Carousel -->
+        <div class="carousel-container">
+            <!-- Slide 1 - Kwid -->
+            <div class="carousel-slide active" style="background-image: url('https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=1920&q=80');">
+                <div class="carousel-overlay">
+                    <div class="carousel-text">
+                        <h3 class="text-4xl md:text-5xl font-bold mb-2">Renault Kwid</h3>
+                        <p class="text-xl md:text-2xl">Manutenção completa para seu compacto</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 2 - Duster -->
+            <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=1920&q=80');">
+                <div class="carousel-overlay">
+                    <div class="carousel-text">
+                        <h3 class="text-4xl md:text-5xl font-bold mb-2">Renault Duster</h3>
+                        <p class="text-xl md:text-2xl">Expertise no SUV robusto da Renault</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 3 - Captur -->
+            <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1920&q=80');">
+                <div class="carousel-overlay">
+                    <div class="carousel-text">
+                        <h3 class="text-4xl md:text-5xl font-bold mb-2">Renault Captur</h3>
+                        <p class="text-xl md:text-2xl">Manutenção detalhada para o SUV elegante</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 4 - Sandero -->
+            <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=1920&q=80');">
+                <div class="carousel-overlay">
+                    <div class="carousel-text">
+                        <h3 class="text-4xl md:text-5xl font-bold mb-2">Renault Sandero</h3>
+                        <p class="text-xl md:text-2xl">Serviços especializados para o hatch versátil</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 5 - Logan -->
+            <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=1920&q=80');">
+                <div class="carousel-overlay">
+                    <div class="carousel-text">
+                        <h3 class="text-4xl md:text-5xl font-bold mb-2">Renault Logan</h3>
+                        <p class="text-xl md:text-2xl">Cuidado e precisão para seu sedan</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 6 - Oroch -->
+            <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=1920&q=80');">
+                <div class="carousel-overlay">
+                    <div class="carousel-text">
+                        <h3 class="text-4xl md:text-5xl font-bold mb-2">Renault Oroch</h3>
+                        <p class="text-xl md:text-2xl">Serviços para a picape versátil da Renault</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Indicators -->
+            <div class="carousel-indicators">
+                <div class="indicator active" data-slide="0"></div>
+                <div class="indicator" data-slide="1"></div>
+                <div class="indicator" data-slide="2"></div>
+                <div class="indicator" data-slide="3"></div>
+                <div class="indicator" data-slide="4"></div>
+                <div class="indicator" data-slide="5"></div>
+            </div>
+        </div>
+        
+        <!-- Hero Content Below Carousel -->
         <div class="max-w-7xl mx-auto px-4 py-20 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h2 class="text-5xl md:text-6xl font-bold mb-6 animate-pulse">
+                <h2 class="text-5xl md:text-6xl font-bold mb-6">
                     Barão Automotiva: Seu <span class="text-yellow-400">Renault</span> em Boas Mãos
                 </h2>
                 <p class="text-xl md:text-2xl mb-8 text-gray-300">
@@ -212,50 +351,62 @@
             <h2 class="text-4xl font-bold text-center mb-4 text-gray-900">Modelos Renault que Atendemos</h2>
             <p class="text-center text-gray-600 mb-12 text-lg">Expertise em toda a linha Renault Brasil, do clássico ao mais recente.</p>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                <!-- Exemplo de Card de Modelo - Substitua as imagens e textos -->
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
-                    <img src="https://placehold.co/400x250/FFD700/000000?text=Renault+Kwid" alt="Renault Kwid" class="w-full h-40 object-cover">
+                    <img src="https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=400&q=80" alt="Renault Kwid" class="w-full h-40 object-cover">
                     <div class="p-4">
                         <h4 class="font-bold text-gray-900">Renault Kwid</h4>
                         <p class="text-sm text-gray-600">Manutenção completa para seu compacto.</p>
                     </div>
                 </div>
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
-                    <img src="https://placehold.co/400x250/FFD700/000000?text=Renault+Stepway" alt="Renault Stepway" class="w-full h-40 object-cover">
+                    <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=400&q=80" alt="Renault Stepway" class="w-full h-40 object-cover">
                     <div class="p-4">
                         <h4 class="font-bold text-gray-900">Renault Stepway</h4>
                         <p class="text-sm text-gray-600">Serviços especializados para o aventureiro.</p>
                     </div>
                 </div>
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
-                    <img src="https://placehold.co/400x250/FFD700/000000?text=Renault+Duster" alt="Renault Duster" class="w-full h-40 object-cover">
+                    <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=400&q=80" alt="Renault Duster" class="w-full h-40 object-cover">
                     <div class="p-4">
                         <h4 class="font-bold text-gray-900">Renault Duster</h4>
                         <p class="text-sm text-gray-600">Expertise no SUV robusto da Renault.</p>
                     </div>
                 </div>
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
-                    <img src="https://placehold.co/400x250/FFD700/000000?text=Renault+Logan" alt="Renault Logan" class="w-full h-40 object-cover">
+                    <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=400&q=80" alt="Renault Logan" class="w-full h-40 object-cover">
                     <div class="p-4">
                         <h4 class="font-bold text-gray-900">Renault Logan</h4>
                         <p class="text-sm text-gray-600">Cuidado e precisão para seu sedan.</p>
                     </div>
                 </div>
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
-                    <img src="https://placehold.co/400x250/FFD700/000000?text=Renault+Captur" alt="Renault Captur" class="w-full h-40 object-cover">
+                    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=400&q=80" alt="Renault Captur" class="w-full h-40 object-cover">
                     <div class="p-4">
                         <h4 class="font-bold text-gray-900">Renault Captur</h4>
                         <p class="text-sm text-gray-600">Manutenção detalhada para o SUV elegante.</p>
                     </div>
                 </div>
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
-                    <img src="https://placehold.co/400x250/FFD700/000000?text=Renault+Oroch" alt="Renault Oroch" class="w-full h-40 object-cover">
+                    <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=400&q=80" alt="Renault Oroch" class="w-full h-40 object-cover">
                     <div class="p-4">
                         <h4 class="font-bold text-gray-900">Renault Oroch</h4>
                         <p class="text-sm text-gray-600">Serviços para a picape versátil da Renault.</p>
                     </div>
                 </div>
-                <!-- Adicione mais cards conforme necessário -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=400&q=80" alt="Renault Kardian" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-bold text-gray-900">Renault Kardian</h4>
+                        <p class="text-sm text-gray-600">Atendimento para o novo SUV da Renault.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=400&q=80" alt="Renault Clio" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-bold text-gray-900">Renault Clio</h4>
+                        <p class="text-sm text-gray-600">Manutenção para o clássico hatch.</p>
+                    </div>
+                </div>
             </div>
             <p class="text-center text-gray-700 mt-12 text-lg">Atendemos toda a linha Renault, incluindo modelos mais antigos. Consulte-nos!</p>
         </div>
@@ -312,7 +463,6 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div>
                     <form action="https://formspree.io/f/seuemail@exemplo.com" method="POST" class="space-y-6">
-                        <!-- ATENÇÃO: Substitua "seuemail@exemplo.com" no action do formulário acima pelo seu e-mail real no Formspree -->
                         <div>
                             <label for="nome" class="block mb-2 font-semibold">Nome</label>
                             <input
@@ -451,11 +601,42 @@
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
-                // Close mobile menu after clicking a link
                 if (!mobileMenu.classList.contains('hidden')) {
                     mobileMenu.classList.add('hidden');
                     menuButton.classList.remove('open');
                 }
+            });
+        });
+
+        // Carousel functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const indicators = document.querySelectorAll('.indicator');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                indicators[i].classList.remove('active');
+            });
+            
+            slides[index].classList.add('active');
+            indicators[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // Auto advance carousel every 5 seconds
+        setInterval(nextSlide, 5000);
+
+        // Click indicators to change slide
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
             });
         });
     </script>
